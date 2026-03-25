@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import medicalBillingImg from '../assets/medical-billing.png';
 
 const ProductsPage = () => {
   return (
@@ -57,7 +58,7 @@ const ProductsPage = () => {
             </div>
             <div className="rounded-xl overflow-hidden bg-[#0B1220]">
               <img
-                src="/src/assets/medical-billing.png"
+                src={medicalBillingImg}
                 alt="Medical billing software"
                 className="h-64 w-full object-cover"
                 loading="lazy"
