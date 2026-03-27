@@ -1,9 +1,15 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Laptop2, LineChart } from 'lucide-react';
+import { Briefcase, Code, GraduationCap, Handshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const techIcons = ['PY', 'JAVA', 'HTML', 'DB'];
+const heroHighlights = [
+  { label: 'Training', icon: GraduationCap },
+  { label: 'Development', icon: Code },
+  { label: 'Placement', icon: Briefcase },
+  { label: 'Assistance', icon: Handshake }
+];
 
 const Hero = () => {
   return (
@@ -38,22 +44,19 @@ const Hero = () => {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-              className="mt-4 flex flex-wrap items-center gap-3 justify-center lg:justify-start"
+              className="mt-5 grid grid-cols-2 gap-4 justify-items-center lg:justify-items-start sm:grid-cols-4 sm:gap-5"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/90">
-                <GraduationCap size={14} className="text-white" />
-                Training
-              </span>
-              <span className="text-white/50">•</span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/90">
-                <Laptop2 size={14} className="text-white" />
-                Development
-              </span>
-              <span className="text-white/50">•</span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/90">
-                <LineChart size={14} className="text-white" />
-                Placement Assistance
-              </span>
+              {heroHighlights.map(({ label, icon: Icon }) => (
+                <div
+                  key={label}
+                  className="group flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-white/90 shadow-sm transition duration-300 hover:scale-[1.03] hover:border-white/40 hover:bg-white/20 hover:text-white"
+                >
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
+                    <Icon size={18} className="text-white" />
+                  </div>
+                  <span className="text-xs font-semibold tracking-wide uppercase">{label}</span>
+                </div>
+              ))}
             </motion.div>
 
             <motion.p

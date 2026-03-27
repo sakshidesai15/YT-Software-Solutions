@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/YTSoftware.jpeg';
+import logo from '../assets/YTsoftware1.jpeg';
 import { courseCategories } from '../data/courseCategories';
 
 const Navbar = () => {
@@ -62,14 +62,16 @@ const Navbar = () => {
           isScrolled ? 'bg-white shadow-md' : 'bg-white'
         }`}
       >
-        <div className="page-container flex h-[72px] items-center justify-between text-slate-900">
-          <div className="flex items-center gap-2">
-            <img
-              src={logo}
-              alt="YT Software Solutions"
-              className="h-[60px] w-auto object-contain"
-              loading="eager"
-            />
+        <div className="page-container flex h-[86px] items-center justify-between text-slate-900">
+          <div className="flex flex-col items-start gap-1">
+            <div className="h-[68px] md:h-[78px] w-[240px] md:w-[280px]">
+              <img
+                src={logo}
+                alt="YT Software Solutions"
+                className="h-full w-full object-contain object-left"
+                loading="eager"
+              />
+            </div>
           </div>
 
         <div className="hidden md:flex items-center gap-6">
